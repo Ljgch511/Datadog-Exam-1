@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Examen: Datadog Fundamentals Certification</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23632ca6'/><text y='.9em' font-size='70' x='15'>🐶</text></svg>">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand" onclick="location.reload()">
+        <div class="brand-icon">🐶</div>
+        <div class="brand-text">
+          <h1>Datadog Fundamentals Exam</h1>
+          <span id="brand-subtitle">Simulador Oficial & Banco de Preguntas</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <!-- SELECTOR DE IDIOMA FLOTANTE -->
+        <div class="lang-switch-container" role="group" aria-label="Selector de idioma">
+          <button id="btn-lang-es" class="lang-btn active" title="Cambiar a Español">🇪🇸 ES</button>
+          <button id="btn-lang-en" class="lang-btn" title="Switch to English">🇺🇸 EN</button>
+        </div>
+        <a href="PLAN_DE_ESTUDIO_DATADOG.md" target="_blank" class="btn btn-outline btn-sm" id="btn-study-plan">
+          📖 Plan de Estudio
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="main-wrapper">
+
+    <!-- ================= VISTA 1: INICIO (HOME) ================= -->
+    <section id="view-home" class="view-section active">
+      
+      <!-- HERO CARD -->
+      <div class="hero-card">
+        <div class="hero-badge" id="hero-badge">Certificación Oficial Kryterion / Webassessor</div>
+        <h2 class="hero-title" id="hero-title">Prepárate para aprobar Datadog Fundamentals</h2>
+        <p class="hero-desc" id="hero-desc">
+          Entrena con preguntas reales y de alta fidelidad organizadas bajo el blueprint oficial de 6 dominios.
+          Elige entre el Modo Rápido, Modo Realista o Modo Completo para estudiar a tu ritmo.
+        </p>
+
+        <div class="exam-meta-grid">
+          <div class="meta-item">
+            <span class="meta-label" id="meta-label-quick">Modo Rápido</span>
+            <span class="meta-value" id="meta-val-quick">25 Preguntas</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label" id="meta-label-realistic">Examen Realista</span>
+            <span class="meta-value" id="meta-val-realistic">75 Preguntas (90m)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label" id="meta-label-passing">Puntaje Aprobación</span>
+            <span class="meta-value" id="meta-val-passing">70% de Aciertos</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label" id="meta-label-total">Banco Total</span>
+            <span class="meta-value" id="meta-val-total">108 Preguntas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SELECCIÓN DE MODOS -->
+      <h3 class="modes-section-title" id="modes-title">Elige tu Modo de Examen</h3>
+      
+      <div class="modes-grid">
+
+        <!-- MODO RÁPIDO (25 PREGUNTAS) -->
+        <div class="mode-card card-quick" id="card-quick">
+          <span class="mode-tag tag-quick" id="tag-quick">⚡ Estudio Exprés</span>
+          <div class="mode-icon">⚡</div>
+          <h4 class="mode-title" id="title-quick">Modo Rápido (25 Preguntas)</h4>
+          <p class="mode-desc" id="desc-quick">
+            Sesión ágil de 10-15 minutos para estudiar. Te muestra la respuesta correcta y la explicación técnica al instante apenas haces clic en cada opción.
+          </p>
+
+          <ul class="mode-features" id="features-quick">
+            <li>25 preguntas aleatorias del banco oficial</li>
+            <li>Respuesta y explicación inmediata al responder</li>
+            <li>Feedback visual (acierto en verde / error en rojo)</li>
+            <li>Cronómetro de estudio sin presión de tiempo límite</li>
+            <li>Informe de resultados con desglose por dominios</li>
+          </ul>
+
+          <button id="btn-start-quick" class="btn btn-warning btn-lg" style="width: 100%;">
+            ⚡ Iniciar Modo Rápido (25q)
+          </button>
+        </div>
+
+        <!-- MODO REALISTA -->
+        <div class="mode-card featured" id="card-realistic">
+          <span class="mode-tag tag-realistic" id="tag-realistic">Modo Simulación Real</span>
+          <div class="mode-icon">⏱️</div>
+          <h4 class="mode-title" id="title-realistic">Modo Realista (75 Preguntas)</h4>
+          <p class="mode-desc" id="desc-realistic">
+            Simula con exactitud la experiencia del examen oficial de certificación.
+            Selecciona 75 preguntas aleatorias del banco con opciones en orden aleatorio y cronómetro de 90 minutos.
+          </p>
+
+          <ul class="mode-features" id="features-realistic">
+            <li>75 preguntas seleccionadas al azar</li>
+            <li>Orden de preguntas y alternativas 100% aleatorio</li>
+            <li>Cronómetro regresivo oficial de 90 minutos</li>
+            <li>Marcar preguntas para revisar (Flag for review)</li>
+            <li>Evaluación y desglose por dominio al finalizar</li>
+          </ul>
+
+          <button id="btn-start-realistic" class="btn btn-primary btn-lg" style="width: 100%;">
+            🚀 Iniciar Examen Realista
+          </button>
+        </div>
+
+        <!-- MODO COMPLETO -->
+        <div class="mode-card" id="card-complete">
+          <span class="mode-tag tag-complete" id="tag-complete">Banco Total & Estudio</span>
+          <div class="mode-icon">📚</div>
+          <h4 class="mode-title" id="title-complete">Modo Completo (Todas las Preguntas)</h4>
+          <p class="mode-desc" id="desc-complete">
+            Práctica guiada ideal para estudiar todas las 108 preguntas del programa oficial.
+            Puedes filtrar por un dominio específico y ver explicaciones técnicas inmediatas.
+          </p>
+
+          <!-- Opciones de estudio -->
+          <div class="study-options-box">
+            <div style="margin-bottom: 0.75rem;">
+              <label for="select-study-mode" id="label-study-mode">Tipo de Evaluación:</label>
+              <select id="select-study-mode" class="select-input">
+                <option id="opt-study-immediate" value="immediate">Estudio Inmediato (Ver explicación al responder)</option>
+                <option id="opt-study-exam" value="exam">Modo Prueba (Ver resultados al terminar)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="select-domain-filter" id="label-domain-filter">Filtrar por Dominio:</label>
+              <select id="select-domain-filter" class="select-input">
+                <option value="all">Todos los Dominios (108 preguntas)</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="btn-start-complete" class="btn btn-secondary btn-lg" style="width: 100%;">
+            📖 Iniciar Modo Completo
+          </button>
+        </div>
+
+      </div>
+
+      <!-- HISTORIAL DE INTENTOS -->
+      <div class="history-section">
+        <div class="history-header">
+          <h4 class="history-title" id="history-title">📊 Historial de Intentos Recientes</h4>
+          <span id="history-subtitle" style="font-size: 0.8rem; color: var(--text-dim);">Guardado en este navegador</span>
+        </div>
+        <div id="history-list" class="history-list">
+          <!-- Poblado dinámicamente -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= VISTA 2: QUIZ / EXAMEN ================= -->
+    <section id="view-quiz" class="view-section">
+      
+      <!-- TOP BAR -->
+      <div class="quiz-topbar">
+        <div class="quiz-meta-left">
+          <span id="badge-quiz-mode" class="badge-mode">Modo Realista</span>
+          <span id="q-counter" class="q-counter">Pregunta 1 de 75</span>
+        </div>
+
+        <div class="quiz-meta-right">
+          <button id="btn-open-nav" class="btn btn-outline btn-sm" title="Ver cuadrícula de preguntas">
+            📑 Mapa de Preguntas
+          </button>
+
+          <button id="btn-flag" class="btn-flag" title="Marcar para revisión">
+            🏳️ Marcar
+          </button>
+
+          <div id="timer-box" class="timer-box">
+            <span>⏱️</span>
+            <span id="timer-display">90:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BARRA DE PROGRESO -->
+      <div class="progress-bar-container">
+        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+      </div>
+
+      <!-- QUESTION CARD -->
+      <div class="question-card">
+        <div class="question-header">
+          <span id="domain-pill" class="domain-pill">Dominio 1: Computer & OS Fundamentals</span>
+          <span id="topic-tag" class="topic-tag">• Memoria y Swap</span>
+        </div>
+
+        <h3 id="question-text" class="question-text">
+          Texto de la pregunta aquí...
+        </h3>
+
+        <!-- LISTA DE OPCIONES -->
+        <div id="options-list" class="options-list">
+          <!-- Poblado dinámicamente con divs de clase .option-item -->
+        </div>
+
+        <!-- EXPLICACIÓN (MODO ESTUDIO / MODO RÁPIDO) -->
+        <div id="explanation-box" class="explanation-box">
+          <div id="explanation-header" class="explanation-header">
+            <span>✓</span> ¡Respuesta Correcta!
+          </div>
+          <div id="explanation-body" class="explanation-body">
+            Explicación técnica detallada aquí...
+          </div>
+          <div class="explanation-footer">
+            <span id="explanation-tip" style="font-size: 0.8rem; color: var(--text-muted);">💡 Tip: Presiona Enter o Espacio para avanzar rápido</span>
+            <button id="btn-next-inline" class="btn btn-primary btn-sm">
+              Siguiente Pregunta ➡️
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM BAR NAVEGACIÓN -->
+      <div class="quiz-bottombar">
+        <button id="btn-prev" class="btn btn-secondary">
+          ⬅️ Anterior
+        </button>
+
+        <div id="quiz-shortcuts-tip" style="font-size: 0.8rem; color: var(--text-dim);">
+          Tip: Usa teclas 1-4 o A-D para seleccionar, flechas para navegar
+        </div>
+
+        <div>
+          <button id="btn-next" class="btn btn-primary">
+            Siguiente ➡️
+          </button>
+          <button id="btn-finish" class="btn btn-danger" style="display: none;">
+            🏁 Finalizar y Calificar
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= VISTA 3: RESULTADOS ================= -->
+    <section id="view-results" class="view-section">
+      
+      <div class="results-card">
+        
+        <!-- BANNER APROBADO / NO APROBADO -->
+        <div id="results-banner" class="results-banner pass">
+          <div id="status-badge" class="status-badge">¡APROBADO! 🎉</div>
+          <p id="results-subtext" class="results-subtext">
+            Has superado el porcentaje oficial requerido de 70% para certificarte.
+          </p>
+        </div>
+
+        <!-- KPIS -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label" id="kpi-label-score">Puntaje Final</div>
+            <div id="kpi-score-pct" class="kpi-val" style="color: var(--success);">88%</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label" id="kpi-label-ratio">Aciertos / Total</div>
+            <div id="kpi-correct-ratio" class="kpi-val">66 / 75</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label" id="kpi-label-time">Tiempo Empleado</div>
+            <div id="kpi-time-spent" class="kpi-val">42:15</div>
+          </div>
+        </div>
+
+        <!-- ACCIONES PRINCIPALES -->
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <button id="btn-retry-failed" class="btn btn-danger btn-lg" style="display: none;">
+            🔁 Repasar Solo Falladas
+          </button>
+          <button id="btn-retry-exam" class="btn btn-primary btn-lg">
+            🔄 Nuevo Examen
+          </button>
+          <button id="btn-go-home" class="btn btn-secondary btn-lg">
+            🏠 Volver al Inicio
+          </button>
+        </div>
+
+      </div>
+
+      <!-- DESGLOSE POR DOMINIOS -->
+      <div class="domain-breakdown-card">
+        <h4 class="domain-breakdown-title" id="domain-breakdown-title">
+          📊 Desempeño por los 6 Dominios Oficiales
+        </h4>
+        <div id="domain-bars-list" class="domain-bars-list">
+          <!-- Poblado dinámicamente con barras de progreso -->
+        </div>
+      </div>
+
+      <!-- REVISIÓN PREGUNTA POR PREGUNTA -->
+      <div class="review-section">
+        <div class="review-header">
+          <h4 id="review-section-title" style="font-size: 1.2rem; font-weight: 700; color: #fff;">
+            🔍 Revisión Detallada de Preguntas
+          </h4>
+          <div class="review-filter-tabs">
+            <button id="tab-all" class="review-tab active">Todas</button>
+            <button id="tab-failed" class="review-tab">Solo Falladas</button>
+            <button id="tab-flagged" class="review-tab">Solo Marcadas 🚩</button>
+          </div>
+        </div>
+
+        <div id="review-list" class="review-list">
+          <!-- Poblado dinámicamente con tarjetas de revisión -->
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL: NAVEGADOR DE PREGUNTAS (GRID) -->
+  <div id="modal-nav" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-nav-title">📑 Mapa de Preguntas del Examen</h4>
+        <button id="btn-close-nav" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="grid-legend">
+          <div class="legend-item"><div class="legend-dot answered"></div> <span id="legend-answered">Respondida</span></div>
+          <div class="legend-item"><div class="legend-dot unanswered"></div> <span id="legend-unanswered">Sin responder</span></div>
+          <div class="legend-item"><div class="legend-dot flagged"></div> <span id="legend-flagged">Marcada 🚩</span></div>
+          <div class="legend-item"><div class="legend-dot current"></div> <span id="legend-current">Actual</span></div>
+        </div>
+        <div id="q-grid" class="q-grid">
+          <!-- Botones 1..N poblados dinámicamente -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <p id="footer-text">Simulador y Banco de Estudio para la Certificación Datadog Fundamentals • Basado en preguntas oficiales y dominios del examen.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
